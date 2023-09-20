@@ -11,17 +11,10 @@ Route::redirect('/', 'login');
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
-
     Route::middleware('admin')->group(function () {
 
         Route::controller(UserController::class)->group(function(){
 
-            Route::get('/users',                'index'   ) ->name('users.index');
-            Route::get('/users/create',         'create'  ) ->name('users.create');
-            Route::post('/users/store',         'store'   ) ->name('users.store');
-            Route::get('/users/{user}/edit',    'edit'    ) ->name('users.edit');
-            Route::put('/users/{user}/update',  'update'  ) ->name('users.update');
             Route::get('/users/confirm/{id}',   'confirm' ) ->name('users.confirm');
             Route::get('/users/delete/{id}',    'delete'  ) ->name('users.delete');
             Route::get('/users/search',         'search'  ) ->name('users.search');
@@ -55,9 +48,30 @@ Route::middleware('auth')->group(function () {
 
     });
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
+
+    Route::controller(UserController::class)->group(function(){
+
+        Route::get('/users',                'index'   ) ->name('users.index');
+        Route::get('/users/create',         'create'  ) ->name('users.create');
+        Route::post('/users/store',         'store'   ) ->name('users.store');
+        Route::get('/users/{user}/edit',    'edit'    ) ->name('users.edit');
+        Route::put('/users/{user}/update',  'update'  ) ->name('users.update');
+    });
+
+    Route::controller(ProfileController::class)->group(function(){
+
+        Route::get('/profile',          'index')          ->name('profile.index');
+        Route::put('/profile',          'update')         ->name('profile.update');
+        Route::get('/profile/password', 'password')       ->name('profile.password');
+        Route::put('/profile/password', 'passwordUpdate') ->name('profile.password.update');
+    });
+
+
+
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 });
 

@@ -19,9 +19,11 @@
                     <div class="card-body">
 
                         <div class="mb-4">
+                            @can('create', App\Models\User::class)
                             <a href="{{ route('users.create') }}" class="btn btn-sm btn-info">
                                 + Novo Usuário
                             </a>
+                            @endcan
                         </div>
 
                         <div class="row">
@@ -40,8 +42,12 @@
                                                 <th>Data de Cadastro</th>
                                                 <th>Função</th>
                                                 <th>Lotação</th>
+                                                @can('update', App\Models\User::class)
                                                 <th class="text-center">Editar</th>
+                                                @endcan
+                                                @can('delete', App\Models\User::class)
                                                 <th class="text-center">Excluir</th>
+                                                @endcan
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -52,16 +58,20 @@
                                                 <td>{{$user->created_at->format('d/m/Y')}}</td>
                                                 <td>{{$user->role->name}}</td>
                                                 <td>{{$user->prisionalUnit->acronym}}</td>
+                                                @can('update', App\Models\User::class)
                                                 <td class="text-center">
                                                     <a href="{{route('users.edit', $user->id)}}" class="text-success">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
                                                 </td>
+                                                @endcan
+                                                @can('delete', App\Models\User::class)
                                                 <td class="text-center">
                                                     <a href="{{route('users.confirm', $user->id)}}" class="text-danger">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </td>
+                                                @endcan
                                             </tr>
                                             @endforeach
                                             </tbody>

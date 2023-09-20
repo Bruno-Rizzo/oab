@@ -8,7 +8,7 @@ use App\Models\Role;
 use App\Models\User;
 use App\Models\PrisionalUnit;
 
-class UserSeeder extends Seeder
+class AdminSeeder extends Seeder
 {
     public function run(): void
     {

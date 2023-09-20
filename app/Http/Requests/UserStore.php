@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class UserStore extends FormRequest
 {
@@ -15,13 +17,22 @@ class UserStore extends FormRequest
 
     public function rules(): array
     {
-        return [
-            'name'              => ['required','min:6'],
-            'email'             => ['required','email','unique:users'],
-            'password'          => ['required','min:8'],
-            'role_id'           => ['required'],
-            'prisional_unit_id' => ['required'],
-        ];
+        if(Auth::id() == 1){
+            return [
+                'name'              => ['required','min:6'],
+                'email'             => ['required','email','unique:users'],
+                'password'          => ['required','min:8'],
+                'role_id'           => ['required'],
+                'prisional_unit_id' => ['required']
+            ];
+        }else{
+            return [
+                'name'              => ['required','min:6'],
+                'email'             => ['required','email','unique:users'],
+                'password'          => ['required','min:8']
+            ];
+        }
+
     }
 
     public function messages(): array

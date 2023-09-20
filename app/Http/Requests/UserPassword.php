@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserFind extends FormRequest
+class UserPassword extends FormRequest
 {
     public function authorize(): bool
     {
@@ -14,7 +14,7 @@ class UserFind extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required'
+            'password' => ['required','min:8']
         ];
     }
 }

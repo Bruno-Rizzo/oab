@@ -59,6 +59,22 @@ class PrisionalUnitSeeder extends Seeder
             'acronym' => 'SEAPAM'
         ]);
         PrisionalUnit::create([
+            'name'    => 'Hospital de Custódia e Tratamento Psiquiátrico Henrique Roxo',
+            'acronym' => 'SEAPHR'
+        ]);
+        PrisionalUnit::create([
+            'name'    => 'Hospital Dr. Hamilton Agostinho Vieira de Castro',
+            'acronym' => 'SEAPHA'
+        ]);
+        PrisionalUnit::create([
+            'name'    => 'Hospital Penal Psiquiátrico Roberto Medeiros',
+            'acronym' => 'SEAPRM'
+        ]);
+        PrisionalUnit::create([
+            'name'    => 'Instituto de Perícias Heitor Carrilho',
+            'acronym' => 'SEAPHH'
+        ]);
+        PrisionalUnit::create([
             'name'    => 'Instituto Penal Benjamin de Moraes Filho',
             'acronym' => 'SEAPBM'
         ]);
@@ -189,6 +205,10 @@ class PrisionalUnitSeeder extends Seeder
         PrisionalUnit::create([
             'name'    => 'Presídio Pedrolino Werling de Oliveira',
             'acronym' => 'SEAPPO'
+        ]);
+        PrisionalUnit::create([
+            'name'    => 'Sanatório Penal',
+            'acronym' => 'SEAPSP'
         ]);
         PrisionalUnit::create([
             'name'    => 'Unidade Materno Infantil',

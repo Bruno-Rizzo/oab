@@ -312,24 +312,58 @@ use App\Models\User;
     sail artisan make:request UserFind
 
 
-
-
-
-
-50 - Criar o Model PrinsionalUnit com migrations e controller:
+39- Criar o Model PrinsionalUnit com migrations e controller:
 
     sail artisan make:model PrisionalUnit -mc
 
 
-51 - Criar um seeder para as Unidades Prisionais:
+40 - Criar um seeder para as Unidades Prisionais:
 
     sail artisan make:seed PrisionalUnitSeeder
 
-52 - Criar um seeder para as Roles:
+41 - Criar um seeder para as Roles:
 
     sail artisan make:seed RoleSeeder
 
-53 - Criar um seeder para as Permissions:
+42 - Criar um seeder para as Permissions:
 
     sail artisan make:seed PermissionSeeder
 
+
+43 - Ciar as Polices para a classe User:
+
+    sail artisan make:policy UserPolicy --model=User
+
+    Na Police criar os métodos
+
+    public function view(): bool
+    {
+        return Auth::user()->role->hasPermission('usuario-visualizar');
+    }
+
+    ...
+
+
+44 - Criar um seeder para associar permissões:
+
+    sail artisan make:seed AssignPermissionsSeeder
+
+
+45 - No AssignPermissionsSeeder , inserir a permissões de Administrador
+
+    use Illuminate\Support\Facades\DB;
+
+    DB::table('permission_role')->insert([
+
+            ['permission_id'=>'1', 'role_id'=>'1'],
+            ['permission_id'=>'2', 'role_id'=>'1'],
+            ['permission_id'=>'3', 'role_id'=>'1'],
+            ['permission_id'=>'4', 'role_id'=>'1'],
+
+           ]);
+
+46 - Inserir as Polices no UserController e nas views relacionadas
+
+47 - Criar um seeder para popular com usuários:
+
+    sail artisan make:seed AuxiliarySeeder

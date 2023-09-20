@@ -42,6 +42,8 @@
                                 </div>
                             </div>
 
+                            @can('admin')
+
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Lotação</label>
                                 <div class="col-sm-6">
@@ -69,6 +71,8 @@
                                     @enderror
                                 </div>
                             </div>
+
+                            @endcan
 
                         </div>
 

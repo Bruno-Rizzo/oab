@@ -45,8 +45,8 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="#"><i class="ri-user-line align-middle me-1"></i> Perfil</a>
-                    <a class="dropdown-item" href="#"><i class="ri-lock-unlock-line align-middle me-1"></i> Aletrar Senha</a>
+                    <a class="dropdown-item" href="{{route('profile.index')}}"><i class="ri-user-line align-middle me-1"></i> Perfil</a>
+                    <a class="dropdown-item" href="{{route('profile.password')}}"><i class="ri-lock-unlock-line align-middle me-1"></i> Aletrar Senha</a>
                     <div class="dropdown-divider"></div>
                     <form action="{{route('logout')}}" method="post">
                         @csrf

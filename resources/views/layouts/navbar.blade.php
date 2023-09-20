@@ -24,6 +24,8 @@
                         </div>
                     </li>
 
+                    @can('view', App\Models\User::class)
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-apps" role="button">
                             <i class=" ri-user-settings-line me-2"></i>Configurações <div class="arrow-down"></div>
@@ -32,6 +34,8 @@
                             <a href="{{route('users.index')}}" class="dropdown-item">Usuários</a>
                         </div>
                     </li>
+
+                    @endcan
 
                     @can("admin")
 
