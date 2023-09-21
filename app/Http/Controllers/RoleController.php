@@ -44,6 +44,7 @@ class RoleController extends Controller
         return to_route('roles.index');
     }
 
+    /*
     public function confirm($id)
     {
         Alert::question('Excluir Função','Deseja excluir esta função?')
@@ -59,6 +60,7 @@ class RoleController extends Controller
         Alert::toast('Função excluída!', 'error');
         return redirect()->back();
     }
+    */
 
     public function assignPermission(Request $request, Role $role)
     {

@@ -43,6 +43,7 @@ class PrisionalUnitController extends Controller
         return to_route('prisional_units.index');
     }
 
+    /*
     public function confirm($id)
     {
         Alert::question('Excluir Unidade','Deseja excluir esta unidade?')
@@ -58,4 +59,6 @@ class PrisionalUnitController extends Controller
         Alert::toast('Unidade excluída!', 'error');
         return redirect()->back();
     }
+    */
+
 }

@@ -362,8 +362,104 @@ use App\Models\User;
 
            ]);
 
+
 46 - Inserir as Polices no UserController e nas views relacionadas
+
 
 47 - Criar um seeder para popular com usuários:
 
     sail artisan make:seed AuxiliarySeeder
+
+
+48 - Incluir o 'SoftDeletes' nos Models
+
+
+    sail artisan make:migration add_deleted_at_field_to_users_table
+
+
+    ** Na migration criada
+
+    public function up(): void
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->DropSoftDeletes();
+        });
+    }
+
+    ** No Model
+
+    use Illuminate\Database\Eloquent\SoftDeletes;
+
+    class User extends Authenticatable
+    {
+        use HasApiTokens, HasFactory, Notifiable, use SoftDeletes;
+        ...
+    }
+
+
+    sail artisan make:migration add_deleted_at_field_to_prisional_units_table
+
+    ** Na migration criada
+
+    public function up(): void
+    {
+        Schema::table('prisional_units', function (Blueprint $table) {
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('prisional_units', function (Blueprint $table) {
+            $table->DropSoftDeletes();
+        });
+    }
+
+     ** No Model
+
+     class PrisionalUnit extends Model
+    {
+        use HasFactory, SoftDeletes;
+        ...
+    }
+
+    sail artisan make:migration add_deleted_at_field_to_roles_table
+
+    ** Na migration criada
+
+    public function up(): void
+    {
+        Schema::table('roles', function (Blueprint $table) {
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('roles', function (Blueprint $table) {
+            $table->DropSoftDeletes();
+        });
+    }
+
+    ** No Model
+
+    use Illuminate\Database\Eloquent\SoftDeletes;
+
+    class Role extends Model
+    {
+        use HasFactory, SoftDeletes;
+        ...
+    }
+
+
+    sail artisan migrate
+
+
+
