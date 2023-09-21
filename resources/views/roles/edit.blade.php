@@ -36,7 +36,7 @@
 
                         <div class="card-footer">
                             <button type="submit" class="btn btn-sm btn-info">
-                                <i class="fa fa-edit me-1"></i> Editar
+                                 Editar
                             </button>
                         </div>
 
@@ -91,10 +91,10 @@
 
                         <div class="card-footer">
                             <button type="submit" class="btn btn-sm btn-info">
-                                <i class=" fas fa-sync-alt me-1"></i> Associar
+                                Associar
                             </button>
-                            <a href="{{route('roles.index')}}" class="btn btn-sm btn-primary">
-                                <i class="fa fa-redo me-1"></i> Voltar
+                            <a href="{{route('roles.index')}}" class="btn btn-sm btn-light">
+                                <i class="fa fa-redo ms-2"></i> Voltar
                             </a>
                         </div>
 

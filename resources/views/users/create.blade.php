@@ -93,10 +93,10 @@
 
                         <div class="card-footer">
                             <button type="submit" class="btn btn-sm btn-info">
-                                <i class="fa fa-save me-1"></i> Cadastrar
+                                 Cadastrar
                             </button>
-                            <a href="{{ route('users.index') }}" class="btn btn-sm btn-primary">
-                                <i class="fa fa-redo me-1"></i> Voltar
+                            <a href="{{ route('users.index') }}" class="btn btn-sm btn-light">
+                                <i class="fa fa-redo ms-2"></i> Voltar
                             </a>
                         </div>
 

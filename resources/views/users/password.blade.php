@@ -17,9 +17,7 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <span style="font-size: 18px"><b>Senhas</b></span>
-                                <i class=" ri-git-commit-line" style="vertical-align: middle"></i>
-                            <span style="font-size: 14px">Alterar Senha</span>
+                            <span style="font-size: 18px">Usuário | Alterar Senha</span>
                         </div>
 
                         <div class="card-body">
@@ -57,10 +55,10 @@
 
                         <div class="card-footer">
                             <button type="submit" class="btn btn-sm btn-info">
-                                <i class="fa fa-edit me-1"></i> Alterar
+                                Alterar
                             </button>
-                            <a href="{{ route('users.index') }}" class="btn btn-sm btn-primary">
-                                <i class="fa fa-redo me-1"></i> Voltar
+                            <a href="{{ route('users.index') }}" class="btn btn-sm btn-light">
+                                <i class="fa fa-redo ms-2"></i> Voltar
                             </a>
                         </div>
 

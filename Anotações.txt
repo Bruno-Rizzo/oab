@@ -462,4 +462,50 @@ use App\Models\User;
     sail artisan migrate
 
 
+49 - Utilizando a biblioteca Laravel Auditing
+
+    sail composer require owen-it/laravel-auditing
+
+    Em config/app.php :
+
+    'providers' => [
+
+    /*
+    * Package Service Providers...
+    */
+
+    OwenIt\Auditing\AuditingServiceProvider::class,
+
+    ]
+
+    sail artisan vendor:publish --provider "OwenIt\Auditing\AuditingServiceProvider" --tag="config"
+
+    sail artisan vendor:publish --provider "OwenIt\Auditing\AuditingServiceProvider" --tag="migrations"
+
+    sail artisan migrate
+
+    ** Para monitorar uma Classe específica :
+
+
+    use OwenIt\Auditing\Contracts\Auditable;
+
+    class User extends Authenticatable implements Auditable
+    {
+        use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+        use \OwenIt\Auditing\Auditable;
+
+        ...
+    }
+
+
+    ** Criando um controller
+
+    sail artisan make:controller AuditController
+
+
+50 - Para as validações do método 'search' doAuditController, criar um FormRequest :
+
+    sail artisan make:request AuditSearch
+
+
 

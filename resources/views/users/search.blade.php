@@ -35,7 +35,7 @@
 
                         <div class="card-footer">
                             <button type="submit" class="btn btn-sm btn-info">
-                                <i class="fa fa-search me-1"></i> Pesquisar
+                               Pesquisar
                             </button>
                         </div>
 
@@ -81,9 +81,9 @@
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->role->name }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('users.show', $user->id) }}" class="text-primary"
+                                                <a href="{{ route('users.show', $user->id) }}" class="text-info"
                                                     style="text-decoration: none">
-                                                    <i class="fa fa-user-check" style="font-size: 19px"></i>
+                                                    <i class="ri-admin-line" style="font-size: 21px"></i>
                                                 </a>
                                             </td>
                                         </tr>

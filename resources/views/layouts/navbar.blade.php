@@ -47,7 +47,7 @@
                             <a href="{{route('prisionalUnits.index')}}" class="dropdown-item">Unidades Prisionais</a>
                             <a href="{{route('roles.index')}}" class="dropdown-item">Funções</a>
                             <a href="{{route('users.search')}}" class="dropdown-item">Senha</a>
-                            <a href="calendar.html" class="dropdown-item">Auditoria</a>
+                            <a href="{{route('audits.index')}}" class="dropdown-item">Auditoria</a>
                         </div>
                     </li>
 

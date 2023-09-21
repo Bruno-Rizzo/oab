@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PrisionalUnitController;
+use App\Http\Controllers\AuditController;
 
 
 Route::redirect('/', 'login');
@@ -44,6 +45,13 @@ Route::middleware('auth')->group(function () {
             Route::put('/prisionalUnits/{unit}/update', 'update')  ->name('prisionalUnits.update');
             Route::get('/prisionalUnits/delete/{id}',   'delete')  ->name('prisionalUnits.delete');
             Route::get('/prisionalUnits/confirm/{id}',  'confirm') ->name('prisionalUnits.confirm');
+        });
+
+        Route::controller(AuditController::class)->group(function(){
+
+            Route::get('/audits',           'index')  ->name('audits.index');
+            Route::post('/audits',          'search') ->name('audits.search');
+            Route::get('/audits/{id}/show', 'show')   ->name('audits.show');
         });
 
     });
