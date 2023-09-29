@@ -24,8 +24,18 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Nome</label>
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="text" placeholder="Nome" name="name" value="{{old('name')}}">
+                                    <input class="form-control" type="text" autofocus name="name" value="{{old('name')}}">
                                     @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-1 col-form-label">ID</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" name="identify" value="{{old('identify')}}">
+                                    @error('identify')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -34,7 +44,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Usuário</label>
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="text" placeholder="Usuário" name="email" value="{{old('email')}}">
+                                    <input class="form-control" type="text" name="email" value="{{old('email')}}">
                                     @error('email')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -47,7 +57,7 @@
                                 <label class="col-sm-1 col-form-label">Lotação</label>
                                 <div class="col-sm-6">
                                     <select class="form-select" name="prisional_unit_id">
-                                        <option value="">Selecione uma lotação...</option>
+                                        <option value=""></option>
                                         @foreach ($units as $unit)
                                             <option value="{{ $unit->id }}" @selected(old('prisional_unit_id') == $unit->id)>
                                                 {{ $unit->name }}
@@ -64,7 +74,7 @@
                                 <label class="col-sm-1 col-form-label">Função</label>
                                 <div class="col-sm-6">
                                     <select class="form-select" name="role_id">
-                                        <option value="">Selecione uma função...</option>
+                                        <option value=""></option>
                                         @foreach ($roles as $role)
                                             <option value="{{ $role->id }}" @selected(old('role_id') == $role->id)>
                                                 {{ $role->name }}
@@ -82,7 +92,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Senha</label>
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="password" placeholder="Senha" name="password">
+                                    <input class="form-control" type="password" name="password">
                                     @error('password')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

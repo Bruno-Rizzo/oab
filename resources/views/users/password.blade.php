@@ -46,7 +46,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Nova Senha</label>
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="password" placeholder="Nova Senha" name="password">
+                                    <input class="form-control" type="password" autofocus name="password">
                                     @error('password') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>

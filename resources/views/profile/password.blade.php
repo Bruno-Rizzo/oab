@@ -55,7 +55,7 @@
 
                         <div class="card-footer">
                             <button type="submit" class="btn btn-sm btn-info">
-                                <i class="fa fa-edit me-1"></i> Alterar Senha
+                                Alterar Senha
                             </button>
                         </div>
 

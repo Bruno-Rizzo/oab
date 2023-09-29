@@ -23,7 +23,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-1 col-form-label">Nome</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" placeholder="Nome" name="name"
+                                    <input type="text" class="form-control" autofocus name="name"
                                         value="{{ old('name') }}">
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>

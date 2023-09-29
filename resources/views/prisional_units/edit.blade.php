@@ -25,7 +25,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Nome</label>
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="text" placeholder="Nome" name="name" value="{{$unit->name}}">
+                                    <input class="form-control" type="text" name="name" value="{{$unit->name}}">
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -35,7 +35,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Sigla</label>
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="text" placeholder="Sigla" name="acronym" value="{{$unit->acronym}}">
+                                    <input class="form-control" type="text" name="acronym" value="{{$unit->acronym}}">
                                     @error('acronym')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -46,9 +46,9 @@
 
                         <div class="card-footer">
                             <button type="submit" class="btn btn-sm btn-info">
-                                <i class="fa fa-edit me-1"></i> Editar
+                                Editar
                             </button>
-                            <a href="{{route('prisionalUnits.index')}}" class="btn btn-sm btn-primary">
+                            <a href="{{route('prisionalUnits.index')}}" class="btn btn-sm btn-light">
                                 <i class="fa fa-redo me-1"></i> Voltar
                             </a>
                         </div>

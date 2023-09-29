@@ -15,7 +15,7 @@ class PrisionalUnitUpdate extends FormRequest
     public function rules(): array
     {
         return [
-            'name'    => ['required','min:8',Rule::unique('prisional_units','id')->ignore($this->unit)],
+            'name'    => ['required','min:8',Rule::unique('prisional_units')->ignore($this->unit)],
             'acronym' => ['required','min:3']
         ];
     }

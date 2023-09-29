@@ -24,7 +24,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Nome</label>
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="text" placeholder="Nome" name="name">
+                                    <input class="form-control" type="text" autofocus name="name">
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -34,7 +34,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Sigla</label>
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="text" placeholder="Sigla" name="acronym">
+                                    <input class="form-control" type="text" name="acronym">
                                     @error('acronym')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

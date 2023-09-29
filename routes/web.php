@@ -31,8 +31,6 @@ Route::middleware('auth')->group(function () {
             Route::post('/roles/store',               'store' )           ->name('roles.store');
             Route::get('/roles/{role}/edit',          'edit'  )           ->name('roles.edit');
             Route::put('/roles/{role}/update',        'update')           ->name('roles.update');
-            Route::get('/roles/delete/{id}',          'delete')           ->name('roles.delete');
-            Route::get('/roles/confirm/{id}',         'confirm')          ->name('roles.confirm');
             Route::post('/roles/{role}/permissions/', 'assignPermission') ->name('roles.permissions');
         });
 
@@ -43,8 +41,6 @@ Route::middleware('auth')->group(function () {
             Route::post('/prisionalUnits/store',        'store' )  ->name('prisionalUnits.store');
             Route::get('/prisionalUnits/{unit}/edit',   'edit'  )  ->name('prisionalUnits.edit');
             Route::put('/prisionalUnits/{unit}/update', 'update')  ->name('prisionalUnits.update');
-            Route::get('/prisionalUnits/delete/{id}',   'delete')  ->name('prisionalUnits.delete');
-            Route::get('/prisionalUnits/confirm/{id}',  'confirm') ->name('prisionalUnits.confirm');
         });
 
         Route::controller(AuditController::class)->group(function(){
@@ -75,11 +71,6 @@ Route::middleware('auth')->group(function () {
         Route::put('/profile/password', 'passwordUpdate') ->name('profile.password.update');
     });
 
-
-
-    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 });
 

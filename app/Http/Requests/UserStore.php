@@ -21,6 +21,7 @@ class UserStore extends FormRequest
             return [
                 'name'              => ['required','min:6'],
                 'email'             => ['required','email','unique:users'],
+                'identify'          => ['required','numeric','unique:users'],
                 'password'          => ['required','min:8'],
                 'role_id'           => ['required'],
                 'prisional_unit_id' => ['required']
@@ -29,6 +30,7 @@ class UserStore extends FormRequest
             return [
                 'name'              => ['required','min:6'],
                 'email'             => ['required','email','unique:users'],
+                'identify'          => ['required','numeric','unique:users'],
                 'password'          => ['required','min:8']
             ];
         }
@@ -39,7 +41,11 @@ class UserStore extends FormRequest
     {
         return [
             'email.required'             => 'O campo usuário é obrigatório',
+            'email.email'                => 'O campo usuário precisa do complemento @pp.rj',
             'email.unique'               => 'Este usuário já está sendo utilizado',
+            'identify.required'          => 'O campo id é obrigatório',
+            'identify.unique'            => 'Este id já está sendo utilizado',
+            'identify.numeric'           => 'O campo id suporta apenas números',
             'role_id.required'           => 'O campo função é obrigatório',
             'prisional_unit_id.required' => 'O campo lotação é obrigatório',
 

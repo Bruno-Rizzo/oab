@@ -15,7 +15,7 @@ class RoleUpdate extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required','min:6',Rule::unique('roles','id')->ignore($this->role)]
+            'name' => ['required','min:6',Rule::unique('roles')->ignore($this->role)]
         ];
     }
 }

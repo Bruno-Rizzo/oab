@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('prisional_unit_id')->constrained('prisional_units')->onDelete('cascade');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('identify')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

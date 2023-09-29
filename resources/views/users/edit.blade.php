@@ -33,6 +33,16 @@
                             </div>
 
                             <div class="row mb-3">
+                                <label class="col-sm-1 col-form-label">ID</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" name="identify" value="{{$user->identify}}">
+                                    @error('identify')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Usuário</label>
                                 <div class="col-sm-6">
                                     <input class="form-control" type="text" name="email" value="{{$user->email}}">

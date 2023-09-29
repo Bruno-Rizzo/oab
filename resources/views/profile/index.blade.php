@@ -90,7 +90,7 @@
                                         <hr class="my-4">
 
                                         <button type="submit" class="btn btn-sm btn-info">
-                                           <i class="fa fa-edit me-1"></i> Editar Perfil
+                                           Editar Perfil
                                         </button>
 
                                     </form>

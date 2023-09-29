@@ -15,6 +15,7 @@ class AdminSeeder extends Seeder
         User::create([
             'name'              => 'Bruno Rizzo',
             'email'             => '50008382@pp.rj',
+            'identify'          => '50008382',
             'password'          => bcrypt('password'),
             'role_id'           => Role::create(['name' => 'Administrador'])->id,
             'prisional_unit_id' => PrisionalUnit::create(['name' => 'Desenvolvimento', 'acronym' => 'SEAPSTI'])->id,

@@ -38,6 +38,7 @@
                                             <thead>
                                             <tr>
                                                 <th>Nome</th>
+                                                <th>ID</th>
                                                 <th>Usuário</th>
                                                 <th>Data de Cadastro</th>
                                                 <th>Função</th>
@@ -54,6 +55,7 @@
                                             @foreach ($users as $user)
                                             <tr>
                                                 <td>{{$user->name}}</td>
+                                                <td>{{$user->identify}}</td>
                                                 <th>{{$user->email}}</td>
                                                 <td>{{$user->created_at->format('d/m/Y')}}</td>
                                                 <td>{{$user->role->name}}</td>

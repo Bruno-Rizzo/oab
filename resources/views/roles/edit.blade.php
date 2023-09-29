@@ -25,7 +25,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Nome</label>
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="text" placeholder="Nome" name="name" value="{{$role->name}}">
+                                    <input class="form-control" type="text" name="name" value="{{$role->name}}">
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

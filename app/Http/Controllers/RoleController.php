@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\RoleStore;
 use App\Http\Requests\RoleUpdate;
 use App\Models\Permission;
@@ -27,7 +28,7 @@ class RoleController extends Controller
         $validated = $request->validated();
         Role::create($validated);
         Alert::toast('Função cadastrada!', 'success');
-        return to_route('roles.index');
+        return Redirect::route('roles.index');
     }
 
     public function edit(Role $role)
@@ -41,26 +42,8 @@ class RoleController extends Controller
         $validated = $request->validated();
         Role::find($role->id)->update($validated);
         Alert::toast('Função editada!', 'success');
-        return to_route('roles.index');
+        return Redirect::route('roles.index');
     }
-
-    /*
-    public function confirm($id)
-    {
-        Alert::question('Excluir Função','Deseja excluir esta função?')
-        ->showConfirmButton('<a href="/roles/delete/'.$id.'" style="color:#FFF;text-decoration:none">Excluir</a>', '#BB2D3B')
-        ->toHtml()
-        ->showCancelButton('Cancelar', '#3085d6')->reverseButtons();
-        return redirect()->back();
-    }
-
-    public function delete($id)
-    {
-        Role::find($id)->delete();
-        Alert::toast('Função excluída!', 'error');
-        return redirect()->back();
-    }
-    */
 
     public function assignPermission(Request $request, Role $role)
     {
