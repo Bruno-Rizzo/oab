@@ -29,7 +29,6 @@
                                 <tr>
                                     <th>Função</th>
                                     <th class="text-center">Editar</th>
-                                    {{-- <th class="text-center">Excluir</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,11 +40,6 @@
                                             <i class="fa fa-edit"></i>
                                         </a>
                                     </td>
-                                    {{-- <td class="text-center">
-                                        <a href="{{route('roles.confirm',$role->id)}}" class="text-danger">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                    </td> --}}
                                 </tr>
                                 @endforeach
                         </table>

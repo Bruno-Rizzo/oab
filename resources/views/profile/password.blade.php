@@ -25,7 +25,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Senha Atual</label>
                                 <div class="col-sm-6">
-                                    <input type="password" class="form-control" placeholder="Senha Atual" name="oldPassword">
+                                    <input type="password" class="form-control" autofocus name="oldPassword">
                                     @error('oldPassword')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -35,7 +35,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Nova Senha</label>
                                 <div class="col-sm-6">
-                                    <input type="password" class="form-control" placeholder="Nova Senha" name="password">
+                                    <input type="password" class="form-control" name="password">
                                     @error('password')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -45,7 +45,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-1 col-form-label">Confirma Senha</label>
                                 <div class="col-sm-6">
-                                    <input type="password" class="form-control" placeholder="Confirma Senha" name="confirmPassword">
+                                    <input type="password" class="form-control" name="confirmPassword">
                                     @error('confirmPassword')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

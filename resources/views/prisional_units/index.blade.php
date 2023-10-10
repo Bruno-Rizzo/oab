@@ -30,8 +30,7 @@
                                     <th>Unidade Prisional</th>
                                     <th>Sigla</th>
                                     <th class="text-center">Editar</th>
-                                    {{-- <th class="text-center">Excluir</th> --}}
-                                </tr>
+                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($units as $unit)
@@ -43,11 +42,6 @@
                                             <i class="fa fa-edit"></i>
                                         </a>
                                     </td>
-                                    {{-- <td class="text-center">
-                                        <a href="{{route('prisionalUnits.confirm',$unit->id)}}" class="text-danger">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                    </td> --}}
                                 </tr>
                                 @endforeach
                         </table>

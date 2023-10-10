@@ -23,9 +23,9 @@ class ProfilePasswordUpdate extends FormRequest
     public function messages(): array
     {
         return [
-            'oldPassword.required'     => 'O campo Senha Atual é obrigatório',
-            'confirmPassword.required' => 'O campo Confirma Senha é obrigatório',
-            'confirmPassword.same'     => 'O campo Nova Senha e Confima Senha não conferem',
+            'oldPassword.required'     => 'O campo senha atual é obrigatório',
+            'confirmPassword.required' => 'O campo confirma senha é obrigatório',
+            'confirmPassword.same'     => 'O campo nova senha e confima senha não conferem',
         ];
     }
 }
