@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PrisionalUnitController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuditController;
 
 
@@ -69,6 +70,16 @@ Route::middleware('auth')->group(function () {
         Route::put('/profile',          'update')         ->name('profile.update');
         Route::get('/profile/password', 'password')       ->name('profile.password');
         Route::put('/profile/password', 'passwordUpdate') ->name('profile.password.update');
+    });
+
+    Route::controller(BookController::class)->group(function(){
+
+        Route::get('/books',               'index')  ->name('books.index');
+        Route::get('/books/create',        'create') ->name('books.create');
+        Route::post('/books/store',        'store')  ->name('books.store');
+        Route::get('/books/{book}/edit',   'edit')   ->name('books.edit');
+        Route::put('/books/{book}/update', 'update') ->name('books.update');
+        Route::put('/books/finish',        'finish') ->name('books.finish');
     });
 
 

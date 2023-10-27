@@ -44,4 +44,11 @@ class User extends Authenticatable implements Auditable
         return $this->belongsTo(PrisionalUnit::class);
     }
 
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
+
+
+
 }

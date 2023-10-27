@@ -21,6 +21,6 @@
     <!-- Datatable Css-->
     <link href="{{asset('vendor/datatable/datatables.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
 
-
+    @livewireStyles
 
 </head>

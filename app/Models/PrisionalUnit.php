@@ -19,4 +19,9 @@ class PrisionalUnit extends Model
         return $this->hasMany(User::class);
     }
 
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
+
 }
