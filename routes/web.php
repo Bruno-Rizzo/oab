@@ -7,6 +7,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PrisionalUnitController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuditController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ResearchController;
 
 
 Route::redirect('/', 'login');
@@ -79,7 +81,20 @@ Route::middleware('auth')->group(function () {
         Route::post('/books/store',        'store')  ->name('books.store');
         Route::get('/books/{book}/edit',   'edit')   ->name('books.edit');
         Route::put('/books/{book}/update', 'update') ->name('books.update');
-        Route::put('/books/finish',        'finish') ->name('books.finish');
+    });
+
+    Route::controller(ReportController::class)->group(function(){
+
+        Route::get('/reports',                        'index')                  ->name('reports.index');
+        Route::get('/reports/users',                  'show')                   ->name('reports.show');
+        Route::post('/reports/lawyer/unit_prisional', 'lawyer_unit_prisional')  ->name('reports.lawyer_unit_prisional');
+        Route::post('/reports/lawyer/prisioner',      'lawyer_prisioner')       ->name('reports.lawyer_prisioner');
+        Route::post('/reports/lawyer/service',        'lawyer_service')         ->name('reports.lawyer_service');
+    });
+
+    Route::controller(ResearchController::class)->group(function(){
+
+        Route::get('/researchs', 'index') ->name('researchs.index');
     });
 
 

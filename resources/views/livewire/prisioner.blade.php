@@ -21,13 +21,6 @@
             @enderror
         </div>
 
-        <label class="col-sm-1 col-form-label">Identidade</label>
-        <div class="col-sm-2">
-            <input type="text" class="form-control" name="identity[]" value="{{ old('identity') }}">
-            @error('identity')
-                <span class="text-danger">{{ $message }}</span>
-            @enderror
-        </div>
         <div class="col-sm-2">
             <button type="button" wire:click="decrement" class="btn btn-sm btn-danger ms-2 mt-1">
                 <i class=" ri-indeterminate-circle-line"></i>

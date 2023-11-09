@@ -23,7 +23,7 @@
                                         + Novo Registro
                                     </a>
                                 </div>
-                                <div>
+                                {{-- <div>
                                     <form action="{{ route('books.finish') }}" method="POST">
                                         @csrf
                                         @method('PUT')
@@ -31,7 +31,7 @@
                                             <i class=" ri-check-line"></i> Finalizar Livro
                                         </button>
                                     </form>
-                                </div>
+                                </div> --}}
                             </div>
 
                             <div class="row">

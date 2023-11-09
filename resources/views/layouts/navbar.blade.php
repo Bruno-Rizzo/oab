@@ -19,9 +19,9 @@
                             <i class="ri-book-read-line me-2"></i>Livro de Advogados <div class="arrow-down"></div>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="topnav-apps">
-                            <a href="{{route('books.index')}}" class="dropdown-item">Iniciar Livro</a>
-                            <a href="calendar.html" class="dropdown-item">Pesquisar</a>
-                            <a href="calendar.html" class="dropdown-item">Relatórios</a>
+                            <a href="{{route('books.index')}}" class="dropdown-item">Registros</a>
+                            <a href="{{route('researchs.index')}}" class="dropdown-item">Pesquisas</a>
+                            <a href="{{route('reports.index')}}" class="dropdown-item">Relatórios</a>
                         </div>
                     </li>
 

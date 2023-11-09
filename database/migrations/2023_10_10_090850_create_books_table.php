@@ -16,9 +16,7 @@ return new class extends Migration
             $table->string('entrance');
             $table->string('exit')->nullable();
             $table->json('prisioner');
-            $table->json('identity')->nullable();
-            $table->boolean('closed')->default(0);
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('prisional_unit_id')->constrained('prisional_units')->onDelete('cascade');
             $table->timestamps();
         });

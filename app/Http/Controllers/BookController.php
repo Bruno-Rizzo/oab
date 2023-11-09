@@ -54,15 +54,15 @@ class BookController extends Controller
         return Redirect::route('books.index');
     }
 
-    public function finish()
-    {
-        $unit  = Auth::user()->prisional_unit_id;
-        $books = Book::where('closed',0)
-                     ->where('prisional_unit_id', $unit)
-                     ->update(['closed' => 1]);
+    // public function finish()
+    // {
+    //     $unit  = Auth::user()->prisional_unit_id;
+    //     $books = Book::where('closed',0)
+    //                  ->where('prisional_unit_id', $unit)
+    //                  ->update(['closed' => 1]);
 
-        return Redirect::route('books.index');
-    }
+    //     return Redirect::route('books.index');
+    // }
 
 
 }

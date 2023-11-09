@@ -23,7 +23,7 @@
                         <div class="card-body">
 
                             <div class="row mb-3">
-                                <label class="col-sm-1 col-form-label">Senha Atual</label>
+                                <label class="col-sm-2 col-form-label">Senha Atual</label>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control" autofocus name="oldPassword">
                                     @error('oldPassword')
@@ -33,7 +33,7 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-1 col-form-label">Nova Senha</label>
+                                <label class="col-sm-2 col-form-label">Nova Senha</label>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control" name="password">
                                     @error('password')
@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-1 col-form-label">Confirma Senha</label>
+                                <label class="col-sm-2 col-form-label">Confirma Senha</label>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control" name="confirmPassword">
                                     @error('confirmPassword')

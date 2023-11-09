@@ -16,15 +16,12 @@ class Book extends Model
         'entrance',
         'exit',
         'prisioner',
-        'identity',
-        'closed',
         'user_id',
         'prisional_unit_id'
     ];
 
     protected $casts = [
-        'prisioner' => 'array',
-        'identity'  => 'array'
+        'prisioner' => 'array'
     ];
 
     public function user()
